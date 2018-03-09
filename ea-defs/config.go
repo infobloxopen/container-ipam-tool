@@ -163,14 +163,11 @@ func RequiredEADefsFor(cloud_type string) (res []ibclient.EADefinition) {
 func CheckForCloudLicense(objMgr *ibclient.ObjectManager) {
 	flag, err := CheckLicense(objMgr, "cloud")
 	if err != nil {
-		fmt.Println("error", err)
-		os.Exit(4)
+		logrus.Fatal("error", err)
 	}
 	if !flag {
-		fmt.Println("Cloud License does not exist")
-		os.Exit(4)
+		logrus.Fatal("Cloud License not available in Infoblox Appliance. Update and try again..")
 	}
-
 }
 
 func CheckLicense(objMgr *ibclient.ObjectManager, licenseType string) (flag bool, err error) {
