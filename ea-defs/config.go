@@ -6,7 +6,6 @@ import (
 	"os"
 	"path"
 	"strings"
-
 	"github.com/BurntSushi/toml"
 	ibclient "github.com/infobloxopen/infoblox-go-client"
 	"github.com/sirupsen/logrus"
