@@ -56,6 +56,8 @@ func main() {
 
 	objMgr := ibclient.NewObjectManager(conn, config.CloudType, "")
 
+	CheckForCloudLicense(objMgr)
+
 	reqEaDefs := GetRequiredEADefs(config.CloudType)
 	for _, e := range reqEaDefs {
 		eadef, err := objMgr.GetEADefinition(e.Name)
