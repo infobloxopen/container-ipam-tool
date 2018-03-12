@@ -163,7 +163,7 @@ func RequiredEADefsFor(cloud_type string) (res []ibclient.EADefinition) {
 func CheckForCloudLicense(objMgr *ibclient.ObjectManager) {
 	err := CheckLicense(objMgr, "cloud")
 	if err != nil {
-		logrus.Fatal("Check Cloud License : ", err)
+		logrus.Fatal("Error while checking for cloud license: ", err)
 	}
 }
 
@@ -179,6 +179,6 @@ func CheckLicense(objMgr *ibclient.ObjectManager, licenseType string) (err error
 			}
 		}
 	}
-	err = fmt.Errorf("%s License not available/applied. Apply the license and try again", licenseType)
+	err = fmt.Errorf("%s License not available/applied. Apply the license for the grid and try again", licenseType)
 	return
 }
