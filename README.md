@@ -7,7 +7,7 @@ Extensible Attributes in Infoblox Appliance help to manage IPAM objects effectiv
 
 A NIOS DDI Appliance with cloud automation License.
 
-You can download a virtual version of the product from the Infoblox Download Center (https://www.infoblox.com/infoblox-download-center). Alternatively, if you are an existing Infoblox customer, you can download it from the support site.
+You can download a virtual version of the product from the Infoblox Download Center (https://www.infoblox.com/infoblox-download-center). Alternatively, if you are an existing Infoblox customer, you can download it from the support site and must be applied with cloud automation licensing from the CLI using ```set temp_license```.
 
 ## Configuring Cloud Extensible Attributes using create-ea-defs
 
