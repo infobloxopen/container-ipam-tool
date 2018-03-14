@@ -7,7 +7,7 @@ Extensible Attributes in Infoblox Appliance help to manage IPAM objects effectiv
 
 A NIOS DDI Appliance with cloud automation License.
 
-You can download a virtual version of the product from the Infoblox Download Center (https://www.infoblox.com/infoblox-download-center). Alternatively, if you are an existing Infoblox customer, you can download it from the support site.
+You can download a virtual version of the product from the Infoblox Download Center (https://www.infoblox.com/infoblox-download-center) and you can also assign temp license by login into the Infoblox DDI appliance console with this command ```set temp_license```. Alternatively, if you are an existing Infoblox customer, you can download it from the support site.
 
 ## Configuring Cloud Extensible Attributes using create-ea-defs
 
@@ -15,12 +15,12 @@ If the "Cloud Network Automation" license is activated, then the Cloud Extensibl
 
 To create EA definition using command line arguments:
 ```
-docker run infoblox/container-ipam-tools:0.0.1 create-ea-defs --debug --cloud-type docker --grid-host 10.120.21.150 --wapi-username=admin --wapi-password=infoblox --wapi-version=2.3
+docker run infoblox/container-ipam-tool:0.0.1 create-ea-defs --debug --cloud-type docker --grid-host 10.120.21.150 --wapi-username=admin --wapi-password=infoblox --wapi-version=2.3
 ```
 
 To create EA definition using configuration file:
 ```
-docker run -v /etc/infoblox:/etc/infoblox infoblox/container-ipam-tools:0.0.1 create-ea-defs --debug --cloud-type docker --conf-file docker-infoblox.conf
+docker run -v /etc/infoblox:/etc/infoblox infoblox/container-ipam-tool:0.0.1 create-ea-defs --debug --cloud-type docker --conf-file docker-infoblox.conf
 ```
 
 Create a file `docker-infoblox.conf` in **`/etc/infoblox/`** directory and add the configuration options in the file.
