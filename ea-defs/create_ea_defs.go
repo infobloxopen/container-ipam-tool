@@ -25,11 +25,8 @@ func main() {
 		logrus.SetLevel(logrus.DebugLevel)
 	}
 
-	if config.CloudType == "" {
-		logrus.Fatal("Please Provide Cloud Type")
-	}
+	CheckCloudType(config.CloudType)
 	logrus.Debugf("Configuration options : %+v", config)
-	logrus.Debugf("Cloud type : %+v", config.CloudType)
 
 	hostConfig := ibclient.HostConfig{
 		Host:     config.GridHost,
