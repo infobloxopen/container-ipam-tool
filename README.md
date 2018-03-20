@@ -15,7 +15,7 @@ If the "Cloud Network Automation" license is activated, then the Cloud Extensibl
 
 To create EA definition using command line arguments:
 ```
-docker run infoblox/container-ipam-tool:0.0.1 create-ea-defs --debug --cloud-type docker --grid-host 10.120.21.150 --wapi-username=admin --wapi-password=infoblox --wapi-version=2.3
+docker run infoblox/container-ipam-tool:0.0.1 create-ea-defs --debug --cloud-type docker --grid-host 10.120.21.150 --wapi-username=admin --wapi-password=infoblox --wapi-version=2.5
 ```
 
 To create EA definition using configuration file:
@@ -32,8 +32,10 @@ grid-host="10.120.21.150"
 wapi-port="443"
 wapi-username="infoblox"
 wapi-password="infoblox"
-wapi-version="2.0"
+wapi-version="2.5"
 ssl-verify="false"
 http-request-timeout=60
 http-pool-connections=10
 ```
+
+NOTE:WAPI Version should be 2.5 or above
