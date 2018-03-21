@@ -182,3 +182,15 @@ func CheckLicense(objMgr *ibclient.ObjectManager, licenseType string) (err error
 	err = fmt.Errorf("%s License not available/applied. Apply the license for the grid and try again", licenseType)
 	return
 }
+func CheckCloudType(cloudType string) {
+	cldTyp := strings.ToLower(cloudType)
+	if cldTyp != "" {
+		if cldTyp == "docker" || cldTyp == "rocket" {
+			logrus.Debugf("Cloud type : %+v", cldTyp)
+		} else {
+			logrus.Fatal("Please provide proper cloud type")
+		}
+	} else {
+		logrus.Fatal("Please provide cloud type")
+	}
+}
