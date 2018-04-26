@@ -14,6 +14,8 @@ const (
 	EA_DOCKER_PLUGIN_LOCK_TIME = "Docker-Plugin-Lock-Time"
 	EA_RKT_PLUGIN_LOCK         = "Rkt-Plugin-Lock"
 	EA_RKT_PLUGIN_LOCK_TIME    = "Rkt-Plugin-Lock-Time"
+	EA_K8S_PLUGIN_LOCK         = "K8s-Plugin-Lock"
+	EA_K8S_PLUGIN_LOCK_TIME    = "K8s-Plugin-Lock-Time"
 )
 
 const (
