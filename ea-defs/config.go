@@ -153,6 +153,18 @@ func RequiredEADefsFor(cloud_type string) (res []ibclient.EADefinition) {
 				Comment: "UNIX Timestamp at which Lock for Rkt Engines was acquired"},
 		}
 		res = RequiredEADefsRkt
+	case "kubernetes":
+		var RequiredEADefsK8s = []ibclient.EADefinition{
+			{Name: EA_TENANT_ID, Type: EA_TYPE_STRING, Flags: "C",
+				Comment: "K8s Engine ID"},
+			{Name: EA_VM_ID, Type: EA_TYPE_STRING, Flags: "C",
+				Comment: "Containter ID in K8s"},
+			{Name: EA_K8S_PLUGIN_LOCK, Type: EA_TYPE_STRING, Flags: "C",
+				Comment: "Distributed Lock for K8s Engines"},
+			{Name: EA_K8S_PLUGIN_LOCK_TIME, Type: EA_TYPE_INTEGER, Flags: "C",
+				Comment: "UNIX Timestamp at which Lock for K8s Engines was acquired"},
+		}
+		res = RequiredEADefsK8s
 	default:
 		logrus.Fatal("Please Provide Correct Cloud Type")
 	}
@@ -185,7 +197,7 @@ func CheckLicense(objMgr *ibclient.ObjectManager, licenseType string) (err error
 func CheckCloudType(cloudType string) {
 	cldTyp := strings.ToLower(cloudType)
 	if cldTyp != "" {
-		if cldTyp == "docker" || cldTyp == "rocket" {
+		if cldTyp == "docker" || cldTyp == "rocket" || cldTyp == "kubernetes" {
 			logrus.Debugf("Cloud type : %+v", cldTyp)
 		} else {
 			logrus.Fatal("Please provide proper cloud type")
